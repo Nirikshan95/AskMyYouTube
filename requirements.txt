@@ -1,0 +1,3 @@
+langchain_huggingface
+streamlit
+youtube-transcript-api
