@@ -1,7 +1,7 @@
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from typing import List
-from src.models import load_embedding_model
+from models import load_embedding_model
 from configs.config import EMBEDDING_MODEL_ID
 
 def create_vector_store(Docs: List[Document]) -> FAISS:
