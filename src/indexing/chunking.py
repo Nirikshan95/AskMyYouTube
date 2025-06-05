@@ -8,10 +8,13 @@ def split_text_into_chunks(text: str,chunk_size:int,chunk_overlap:int):
         chunk_overlap (int): The number of overlapping characters between chunks.
 
     Returns:
-        list: A list of text chunks.
+        list: A list of Documnet objects chunks.
     """
-    splitter=RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=chunk_overlap
-    )
-    return splitter.split_text(text)
+    try:
+        splitter=RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=chunk_overlap
+        )
+        return splitter.create_documents([text])
+    except Exception as e:
+        return f"An error occurred while splitting text: {e}"

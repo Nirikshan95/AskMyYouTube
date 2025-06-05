@@ -17,11 +17,15 @@ def get_youtube_transcript(url: str) -> str:
         transcript="\n\n".join(script['text'] for script in transcript)     # Removed timestamps and duration
         return transcript
     except Exception as e:
-        return f"An error occurred: {e}"
+        return f"An error occurred: {e}\n\n Try again [ sometimes it's failed to fetch transcript ]"
     
 if __name__ == "__main__":
     # Example usage
     url = input("Enter YouTube video URL: ")
     transcript = get_youtube_transcript(url)
-    print("Transcript:")
-    print(transcript)
+    from chunking import split_text_into_chunks
+    chuncks= split_text_into_chunks(transcript, chunk_size=1000, chunk_overlap=100)
+    from vector_store import create_vector_store
+    vector_store=create_vector_store(chuncks)
+    
+    print(vector_store.get(include=["metadatas", "documents", "ids"])[0])  # Print the first document's metadata, text, and ID

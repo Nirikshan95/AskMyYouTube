@@ -1,3 +1,5 @@
-langchain_huggingface
-streamlit
-youtube-transcript-api
+langchain-huggingface==0.2.0
+streamlit==1.45.1
+youtube-transcript-api==1.0.3
+langchain==0.3.25
+langchain-community
