@@ -1,5 +1,5 @@
 # Embedding model
-EMBEDDING_MODEL_ID="jinaai/jina-embeddings-v3"
+EMBEDDING_MODEL_ID="sentence-transformers/all-MiniLM-L6-v2"
 
 # Chat model
 CHAT_MODEL_ID="meta-llama/Llama-2-7b-chat-hf"
