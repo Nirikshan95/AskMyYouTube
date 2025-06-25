@@ -1,7 +1,6 @@
 from src.indexing.youtube_transcript import get_youtube_transcript,transcript_exception_msg
 from src.indexing.chunking import split_text_into_chunks
 from src.indexing.vector_store import create_vector_store
-from src.models import load_embedding_model, load_chat_model
 from src.ans_generation import generate_answer
 from configs import config
 
